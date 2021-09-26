@@ -1,14 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import Cal from '../Calculator/Cal';
 import Salary from '../Salary/Salary';
 import'./Company.css';
 
 const Company = () => {
     const [salarys, setSalarys] = useState([]);
+    const [cal, setCal] = useState([]);
     useEffect( () =>{
         fetch('./salary.JSON')
         .then(res => res.json())
         .then(data => setSalarys(data));
     }, [])
+
+    const clickSalaryToAdd = (salary) => {
+        //console.log(salary.name);
+        const newCal = [...cal, salary];
+        setCal(newCal);
+
+    }
 
 
     return (
@@ -17,19 +26,17 @@ const Company = () => {
                 
                 {
                     salarys.map (salary => <Salary 
-                        
+                        key ={salary.id}
                         salary ={salary}
+                        clickSalaryToAdd={clickSalaryToAdd}
                         >
-
                         </Salary>)
                 }
 
-                </div>
-           
-                
+                </div>   
            
            <div className="cart">
-               <h2>Total Salary</h2>
+               <Cal cal={cal}></Cal>
            </div>
         </div>
     );

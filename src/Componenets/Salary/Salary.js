@@ -1,10 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee,faCoins} from '@fortawesome/free-solid-svg-icons';
+import {faCoins} from '@fortawesome/free-solid-svg-icons';
 import'./Salary.css';
 
 const Salary = (props) => {
-    console.log(props.salary);
+    
     const {name, position, department, age, salary, img} = props.salary;
     const element = <FontAwesomeIcon icon={faCoins} />
     return (
@@ -19,7 +19,7 @@ const Salary = (props) => {
                 <h4>Age: {age}</h4> 
                 <h4>Salary BDT: {salary}</h4>
            </div>
-           <button className="salary-button"  type="">{element} Add Salary</button>
+           <button onClick ={() => props.clickSalaryToAdd(props.salary)} className="salary-button" >{element} Add Salary</button>
            
         </div>
     );
