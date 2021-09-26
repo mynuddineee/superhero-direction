@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Employee information website
+=======
+# Employee Salary of Bangladesh Pharmaceuticals Ltd
+>>>>>>> aad83c465e43744bf82a97bb62de02fddb8b6ba7
 
 # Live site link: https://hopeful-hawking-274676.netlify.app/ 
 
